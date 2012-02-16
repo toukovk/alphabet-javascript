@@ -30,6 +30,33 @@ function isAlpha(parm) {return isValid(parm,lwr+upr);}
 var images = {
     'a': 'a.jpg',
     'b': 'b.jpg',
+    'c': 'c.jpg', 
+    'd': 'd.jpg', 
+    'e': 'e.png', 
+    'f': 'f.jpg', 
+    'g': 'g.jpg', 
+    'h': 'h.jpg', 
+    'i': 'i.png', 
+    'j': 'j.jpg', 
+    'k': 'k.jpg', 
+    'l': 'l.jpg', 
+    'm': 'm.jpg', 
+    'n': 'n.jpg', 
+    'o': 'o.jpg', 
+    'p': 'p.png', 
+    'q': 'q.jpg', 
+    'r': 'r.jpg', 
+    's': 's.jpg', 
+    't': 't.jpg', 
+    'u': 'u.jpg', 
+    'v': 'v.png', 
+    'w': 'w.jpg', 
+    'x': 'x.png', 
+    'y': 'y.png', 
+    'z': 'z.png', 
+    'å': 'a_o.jpg', 
+    'ä': 'a_uml.png', 
+    'ö': 'o_uml.jpg', 
 };
 
 function get_image(key) {
@@ -39,7 +66,6 @@ function get_image(key) {
 
 function get_entry(key) {
     if(key == null || !isAlpha(key)) {
-	// debug("Invalid character");
 	return null;
     } 
     // debug("Valid");
