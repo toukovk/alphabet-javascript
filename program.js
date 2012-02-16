@@ -27,6 +27,16 @@ function isValid(parm,val) {
 }
 function isAlpha(parm) {return isValid(parm,lwr+upr);}
 
+var images = {
+    'a': 'a.jpg',
+    'b': 'b.jpg',
+};
+
+function get_image(key) {
+    key = key.toLowerCase();
+    return images[key] || 'a.jpg';
+}
+
 function get_entry(key) {
     if(key == null || !isAlpha(key)) {
 	// debug("Invalid character");
@@ -36,6 +46,7 @@ function get_entry(key) {
     key = key.toUpperCase();
     entry = new Object();
     entry.title = key.toUpperCase() + " " + key.toLowerCase();
+    entry.image = get_image(key);
     return entry;
 }
 
