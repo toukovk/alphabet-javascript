@@ -50,6 +50,11 @@ function get_entry(key) {
     return entry;
 }
 
+function update_image(image_name) {
+    imgFldr = 'images/';
+    $("#image").attr('src', imgFldr+image_name);
+}
+
 // Key should be one-character string
 function update_key(key) {
     // debug(key);
@@ -58,7 +63,9 @@ function update_key(key) {
 	return;
     }
     $("#key_label").text(entry.title);
+    update_image(entry.image)
 }
+
 
 // Register keypress listener
 $(function() {
