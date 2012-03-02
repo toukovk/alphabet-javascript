@@ -1,3 +1,5 @@
+// TODO - ääkköset!
+
 function debug(msg) {
     // Find the debug section
     var log = document.getElementById("debuglog");
@@ -89,7 +91,33 @@ function update_key(key) {
 	return;
     }
     $("#key_label").text(entry.title);
-    update_image(entry.image)
+    update_image(entry.image);
+    play_sound("a");
+}
+
+function generate_sound_name(name, extension) {
+    return "audio/" + name + "." + extension;
+}
+
+var a = null;
+
+function play_sound(name) {
+    if(a != null) {
+     	a.pause();
+    } else {
+	a = new Audio();
+    }
+    if(a.canPlayType("audio/mp3")) {
+	name = generate_sound_name(name, "mp3");
+	a.src = name;
+	a.play();
+    } else if(a.canPlayType("audio/ogg; codec=vorbis")) {
+	name = generate_sound_name(name, "ogg");
+	a.src = name;
+	a.play();
+    } else {
+	debug("audio/mp3 not supported");
+    }
 }
 
 
