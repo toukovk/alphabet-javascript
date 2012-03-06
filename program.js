@@ -55,7 +55,7 @@ var images = {
     'w': 'w.jpg', 
     'x': 'x.png', 
     'y': 'y.png', 
-    'z': 'z.png', 
+    'z': 'z.jpg', 
     'å': 'a_o.jpg', 
     'ä': 'a_uml.png', 
     'ö': 'o_uml.jpg', 
