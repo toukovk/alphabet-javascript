@@ -75,6 +75,8 @@ function get_entry(key) {
     entry = new Object();
     entry.title = key.toUpperCase() + " " + key.toLowerCase();
     entry.image = get_image(key);
+    // TODO - a_uml etc
+    entry.sound = key.toLowerCase();
     return entry;
 }
 
@@ -92,7 +94,7 @@ function update_key(key) {
     }
     $("#key_label").text(entry.title);
     update_image(entry.image);
-    play_sound("a");
+    play_sound(entry.sound);
 }
 
 function generate_sound_name(name, extension) {
