@@ -1,5 +1,3 @@
-// TODO - ääkköset!
-
 (function() {
     function debug(msg) {
 	// Find the debug section
@@ -28,7 +26,9 @@
 	}
 	return true;
     }
-    function isAlpha(parm) {return isValid(parm,lwr+upr);}
+    function isAlpha(parm) {
+	return isValid(parm,lwr+upr);
+    }
     
     var images = {
 	'a': 'a.jpg',
@@ -66,18 +66,28 @@
 	key = key.toLowerCase();
 	return images[key] || 'a.jpg';
     }
+
+    function get_sound_name(key) {
+	key = key.toLowerCase();
+	if(key == 'ä')
+	    return "a_uml";
+	else if(key == "å")
+	    return "a_o";
+	else if(key == "ö")
+	    return "o_uml";
+	else
+	    return key.toLowerCase();
+    }
     
     function get_entry(key) {
 	if(key == null || !isAlpha(key)) {
 	    return null;
 	} 
-	// debug("Valid");
 	key = key.toUpperCase();
 	entry = new Object();
 	entry.title = key.toUpperCase() + " " + key.toLowerCase();
 	entry.image = get_image(key);
-	// TODO - a_uml etc
-	entry.sound = key.toLowerCase();
+	entry.sound = get_sound_name(key);
 	return entry;
     }
     
@@ -88,7 +98,6 @@
     
     // Key should be one-character string
     function update_key(key) {
-	// debug(key);
 	entry = get_entry(key);
 	if(entry == null) {
 	    return;
@@ -134,3 +143,4 @@
 	});
     });
 }());
+
