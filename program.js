@@ -102,6 +102,7 @@
 	if(entry == null) {
 	    return;
 	}
+	$("#greeting").text("");
 	$("#key_label").text(entry.title);
 	update_image(entry.image);
 	play_sound(entry.sound);
