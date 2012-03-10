@@ -94,24 +94,6 @@
     function update_image(image_name) {
 	imgFldr = 'images/';
 	$("#image").attr('src', imgFldr+image_name);
-	resizeImage();
-    }
-
-    function resizeImage() {
-	var window_height = $(window).height(); 
-	var window_width  = $(window).width(); 
-	var image = $('#image');
-	var image_width   = image.width();
-	var image_height  = image.height();
-	var height_ratio  = image_height / window_height;
-	var width_ratio   = image_width / window_width;
-	if (height_ratio > width_ratio) {
-	    image.width("auto");
-	    image.height("100%");
-	} else {
-	    image.width("100%");
-	    image.height("auto");
-	}
     }
     
     // Key should be one-character string

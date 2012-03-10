@@ -10,3 +10,8 @@ body {
 #key_label {
 	font-size: 60pt;
 }
+
+#image {
+	height: 100%;
+	width: auto;
+}
