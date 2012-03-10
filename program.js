@@ -100,20 +100,20 @@
     function resizeImage() {
 	var window_height = $(window).height(); 
 	var window_width  = $(window).width(); 
-	var image = document.images[0];
-	var image_width   = image.width;
-	var image_height  = image.height
+	var image = $('#image');
+	var image_width   = image.width();
+	var image_height  = image.height()
 	var height_ratio  = image_height / window_height
 	var width_ratio   = image_width / window_width
 	if (height_ratio > width_ratio)
 	{
-		image.style.width  = "auto"
-		image.style.height = "100%"
+	    image.width("auto");
+	    image.height("100%");
 	}
 	else
 	{
-		image.style.width  = "100%"
-		image.style.height = "auto"
+	    image.width("100%");
+	    image.height("auto");
 	}
     }
     
