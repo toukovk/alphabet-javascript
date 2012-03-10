@@ -94,6 +94,27 @@
     function update_image(image_name) {
 	imgFldr = 'images/';
 	$("#image").attr('src', imgFldr+image_name);
+	resizeImage();
+    }
+
+    function resizeImage() {
+	var window_height = $(window).height(); 
+	var window_width  = $(window).width(); 
+	var image = document.images[0];
+	var image_width   = image.width;
+	var image_height  = image.height
+	var height_ratio  = image_height / window_height
+	var width_ratio   = image_width / window_width
+	if (height_ratio > width_ratio)
+	{
+		image.style.width  = "auto"
+		image.style.height = "100%"
+	}
+	else
+	{
+		image.style.width  = "100%"
+		image.style.height = "auto"
+	}
     }
     
     // Key should be one-character string
@@ -105,6 +126,7 @@
 	$("#greeting").text("");
 	$("#key_label").text(entry.title);
 	update_image(entry.image);
+	$("#image").show();
 	play_sound(entry.sound);
     }
     
@@ -136,6 +158,7 @@
     
     // Register keypress listener
     $(function() {
+	$("#image").hide();
 	$(window).keypress(function(e) {
 	    var key = e.which;
 	    // debug(key);
