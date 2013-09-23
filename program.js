@@ -107,6 +107,7 @@
 	update_image(entry.image);
 	$("#image").show();
 	play_sound(entry.sound);
+	ga('send', 'event', 'key', 'click', entry.title);
     }
     
     function generate_sound_name(name, extension) {
