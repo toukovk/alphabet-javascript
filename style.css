@@ -16,6 +16,15 @@ body {
 	width: auto;
 }
 
+#fb-like {
+	display:block;
+
+	position:absolute;
+	bottom:10px;
+	left:10px;
+	text-align: left;
+}
+
 #info_link {
 	display:block;
 

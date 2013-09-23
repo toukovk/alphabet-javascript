@@ -6,12 +6,31 @@
   <script src="program.js"> </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet" href="style.css" type="text/css"/>
+  <meta property="og:title" content="Aakkoset!" />
+  <meta property="og:type" content="game" />
+  <meta property="og:url" content="http://koti.kapsi.fi/~tvainiok/aakkoset-js/" />
+  <meta property="og:image" content="http://koti.kapsi.fi/~tvainiok/aakkoset-js/images/b.jpg" />
+  <meta property="og:site_name" content="Aakkoset-peli lapsille" />
+  <meta property="fb:admins" content="100004371306641" />
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 <h2 id="greeting">Terve, Aakkoset! Paina jotain kirjainpainiketta</h2>
 <h1 id="key_label"></h1>
 <img id="image" src="images/a.jpg" alt="Image"/>
+<div id="fb-like">
+  <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+</div>
 <a id="info_link" href="info.html">Info</a>
 </body>
 </html>
